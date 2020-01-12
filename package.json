@@ -20,6 +20,7 @@
   "author": "Fernando Palacios Landi",
   "license": "ISC",
   "dependencies": {
-    "lodash": "latest"
+    "lodash": "^4.17.15",
+    "jquery": "^3.4.1"
   }
 }

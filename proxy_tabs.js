@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 const COMMUNICATE_TABS = 'message';
 
 class ProxyTabs {
