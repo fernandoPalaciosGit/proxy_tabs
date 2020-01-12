@@ -1,4 +1,3 @@
-const {hasOpenedParentWindow} = require('od-modules/utils/tab_manager/tab_status');
 const COMMUNICATE_TABS = 'message';
 
 class ProxyTabs {
@@ -54,7 +53,7 @@ class ProxyTabs {
     * @param {object} data - {event: event_name, ...data_to_send_to_other_window}
     */
     static postMessage(data) {
-        if (window.postMessage && hasOpenedParentWindow()) {
+        if (window.postMessage && ProxyTabs.hasOpenedParentWindow()) {
             window.opener.parent.postMessage(data, window.location.origin);
         }
     }

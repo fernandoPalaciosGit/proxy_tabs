@@ -10,7 +10,7 @@ const EVENT_HANDLER = {
         }
     },
     'childTabThrowsError': ({originalEvent = {}}) => {
-        const {error} = originalEvent.source;
+        const {error} = originalEvent.data;
 
         if (!!error) {
             console.error(`Some errors happens in the actual tab: ${error.toString()}`);
