@@ -1,5 +1,8 @@
+import ProxyTabs from 'proxy_tabs';
+import _ from 'lodash';
+
 const EVENT_HANDLER = {
-    'childTab': ({originalEvent = {}}) => {
+    'childTabCounter': ({originalEvent = {}}) => {
         const {tabCount, tabName} = originalEvent.source;
 
         if (_.isNumber(tabCount) && _.isString(tabName)) {

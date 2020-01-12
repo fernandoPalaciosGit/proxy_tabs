@@ -1,0 +1,25 @@
+{
+  "name": "proxy_tabs",
+  "version": "1.0.0",
+  "description": "communicate browser tabs throght cross domain origin messages",
+  "main": "proxy_tabs.js",
+  "directories": {
+    "example": "example",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "tabs",
+    "proxy",
+    "browser",
+    "tab",
+    "communication"
+  ],
+  "author": "Fernando Palacios Landi",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "latest"
+  }
+}
