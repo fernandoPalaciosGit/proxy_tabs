@@ -1,7 +1,7 @@
 {
   "name": "proxy_tabs",
   "version": "1.0.0",
-  "description": "communicate browser tabs throght cross domain origin messages",
+  "description": "communicate browser tabs thought cross domain origin messages",
   "main": "proxy_tabs.js",
   "directories": {
     "example": "example",
