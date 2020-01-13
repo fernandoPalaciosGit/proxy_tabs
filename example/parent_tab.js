@@ -12,9 +12,9 @@ const EVENT_HANDLER = {
         }
     },
     'childTabThrowsError': ({originalEvent = {}}) => {
-        const {error} = originalEvent.data;
+        const {error} = JSON.parse(originalEvent.data);
 
-        if (!!error) {
+        if (error) {
             console.error(`Some errors happens in the actual tab: ${error.toString()}`);
         }
     },
