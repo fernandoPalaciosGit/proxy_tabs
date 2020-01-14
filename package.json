@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "test"
+    "test": "mocha --require babel-core/register './tests/**/*.specs.js'"
   },
   "keywords": [
     "tabs",
@@ -20,7 +20,21 @@
   "author": "Fernando Palacios Landi",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.15",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "faker": "^4.1.0",
+    "mocha": "^6.2.1",
+    "sinon": "^7.5.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   }
 }

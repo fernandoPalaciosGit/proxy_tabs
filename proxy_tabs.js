@@ -4,13 +4,14 @@ const COMMUNICATE_TABS = 'message';
 const getJsonParsed = (data) => {
     try {
         return JSON.parse(data);
-    } catch {
+    } catch (err) {
         return {};
     }
 };
 
 class ProxyTabs {
     constructor(context, idContext) {
+        if (!context || !idContext) return;
         this.context = context;
         this.proxyEvents = [];
         this.activateCrossDomainMessage(idContext);
