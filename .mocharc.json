@@ -1,0 +1,12 @@
+{
+  "diff": true,
+  "extension": ["js"],
+  "package": "./package.json",
+  "timeout": 2000,
+  "ui": "bdd",
+  "spec": "./tests/**/*.specs.js",
+  "require": [
+    "babel-core/register",
+    "./tests/setup.js"
+  ]
+}

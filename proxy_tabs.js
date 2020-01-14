@@ -1,6 +1,8 @@
 import $ from 'jquery';
 
 const COMMUNICATE_TABS = 'message';
+const ERROR_CONTEXT = 'Proxy Tabs should have window context and ID to be named';
+const ERROR_MESSAGE_WITH_DATA = 'postMessage triggered with data should have {event} property';
 const getJsonParsed = (data) => {
     try {
         return JSON.parse(data);
@@ -11,7 +13,7 @@ const getJsonParsed = (data) => {
 
 class ProxyTabs {
     constructor(context, idContext) {
-        if (!context || !idContext) return;
+        if (!context || !idContext) throw new Error(ERROR_CONTEXT);
         this.context = context;
         this.proxyEvents = [];
         this.activateCrossDomainMessage(idContext);
@@ -65,7 +67,7 @@ class ProxyTabs {
    */
     static postMessage(data) {
         if (window.postMessage && ProxyTabs.hasOpenedParentWindow()) {
-            if (_.isObject(data) && !data.event) return;
+            if (_.isObject(data) && !data.event) throw new Error(ERROR_MESSAGE_WITH_DATA);
             if (_.isObject(data)) data = JSON.stringify(data);
             window.opener.parent.postMessage(data, window.location.origin);
         }

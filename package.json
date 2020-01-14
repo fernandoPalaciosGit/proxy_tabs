@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "mocha --require babel-core/register './tests/**/*.specs.js'"
+    "test": "mocha"
   },
   "keywords": [
     "tabs",
@@ -29,6 +29,7 @@
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "faker": "^4.1.0",
+    "jsdom": "^16.0.0",
     "mocha": "^6.2.1",
     "sinon": "^7.5.0"
   },
