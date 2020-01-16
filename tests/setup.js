@@ -13,5 +13,6 @@ const jsdom = new JSDOM(
 global.navigator = {
     userAgent: 'node.js',
 };
+global.Window = jsdom.window.constructor;
+global.window = jsdom.window;
 global.document = jsdom.window.document;
-global.window = global.self = jsdom.window;

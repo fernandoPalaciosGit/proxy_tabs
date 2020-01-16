@@ -13,7 +13,7 @@ const getJsonParsed = (data) => {
 
 class ProxyTabs {
     constructor(context, idContext) {
-        if (!context || !idContext) throw new Error(ERROR_CONTEXT);
+        if (!(context instanceof Window) || !idContext) throw new Error(ERROR_CONTEXT);
         this.context = context;
         this.proxyEvents = [];
         this.activateCrossDomainMessage(idContext);
@@ -25,7 +25,6 @@ class ProxyTabs {
 
     validateCommunication({data, origin}, event) {
         const parsedData = getJsonParsed(data);
-
         return origin === window.location.origin && (data === event || parsedData.event === event);
     }
 
