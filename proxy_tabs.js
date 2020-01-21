@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import _ from 'lodash';
 
 const COMMUNICATE_TABS = 'message';
 const ERROR_CONTEXT = 'Proxy Tabs should have window context and ID to be named';
@@ -64,7 +65,7 @@ class ProxyTabs {
    * @param {string} data - 'event_name' (to subscribe handlers in a new ProxyTabs())
    * @param {object} data - {event: 'event_name', ...data_to_send_to_other_window}
    */
-    static postMessage(data) {
+    static trigger(data) {
         if (window.postMessage && ProxyTabs.hasOpenedParentWindow()) {
             if (_.isObject(data) && !data.event) throw new Error(ERROR_MESSAGE_WITH_DATA);
             if (_.isObject(data)) data = JSON.stringify(data);
@@ -73,4 +74,8 @@ class ProxyTabs {
     }
 }
 
-module.exports = ProxyTabs;
+module.exports = {
+    ProxyTabs,
+    ERROR_CONTEXT,
+    ERROR_MESSAGE_WITH_DATA
+};

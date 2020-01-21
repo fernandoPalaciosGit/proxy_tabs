@@ -1,15 +1,18 @@
 import {JSDOM} from 'jsdom';
 
+const jsdomConfig = {
+    url: 'https://odigeo.org',
+    referrer: 'https://odigeo.com',
+    contentType: 'text/html',
+    includeNodeLocations: true,
+    storageQuota: 10000000,
+};
 const jsdom = new JSDOM(
     `<!DOCTYPE html><html lang=""><head><script></script><title></title></head><body><div id="widget"></div></body></html>`,
-    {
-        url: 'https://odigeo.org',
-        referrer: 'https://odigeo.com',
-        contentType: 'text/html',
-        includeNodeLocations: true,
-        storageQuota: 10000000,
-    },
+    jsdomConfig,
 );
+jsdom.window.opener = {};
+global.jsdomConfig = jsdomConfig;
 global.navigator = {
     userAgent: 'node.js',
 };
